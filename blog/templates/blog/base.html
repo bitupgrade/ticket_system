@@ -13,28 +13,27 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
     {% if title %}
-      <title>Django Blog - {{ title }}</title>
+      <title>Ticket System - {{ title }}</title>
     {% else %}
-      <title>Django Blog</title>
+      <title>Ticket System</title>
     {% endif %}
   </head>
   <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Ticket System</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+              <!-- <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a> -->
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'post-create' %}">New ticket</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
@@ -58,6 +57,7 @@
           {% endif %}
           {% block content %}{% endblock %}
         </div>
+        <!-- Sidebar
         <div class="col-md-4">
           <div class="content-section">
             <h3>Our Sidebar</h3>
@@ -70,7 +70,7 @@
               </ul>
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
 

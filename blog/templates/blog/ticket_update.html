@@ -1,0 +1,22 @@
+<!-- Update ticket page -->
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <nav class="nav">
+        {% if object.author == user %}
+            <div>
+                <button class="btn btn-secondary btn-sm mt-1 mb-1" type="submit" form="update_form">Save</button>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Cancel</a>
+            </div>
+        {% endif %}
+    </nav>
+  <div class="content-section">
+    <form id="update_form" method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Update ticket</legend>
+        {{ form|crispy }}
+      </fieldset>
+    </form>
+  </div>
+{% endblock content %}

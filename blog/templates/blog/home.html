@@ -14,7 +14,7 @@
           <tr>
             <th scope="row"><a href="{% url 'post-detail' post.id %}">{{ forloop.counter }}</a></th>
             <td>{{ post.title }}</td>
-            <td>Priority 4</td>
+            <td>{{ post.ticket_priority }}</td>
             <td>{{ post.author }}</td>
           </tr>
         </tbody>

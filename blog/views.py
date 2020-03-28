@@ -38,7 +38,7 @@ class PostDetailView(DetailView):
 # LoginRequiredMixin redirects user to login page if they try to create new post withour being logged in
 class PostCreateView(LoginRequiredMixin, CreateView): 
     model = Post
-    fields = ['title', 'content', 'ticket_priority'] # Fields in the create post section
+    fields = ['title', 'description', 'priority'] # Fields in the create post section
 
     # Makes currently logged in user the valid user
     def form_valid(self, form):
@@ -47,7 +47,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView): 
     model = Post
-    fields = ['title', 'content', 'ticket_priority'] # Fields in the update ticket section
+    fields = ['title', 'description', 'priority'] # Fields in the update ticket section
     template_name = 'blog/ticket_update.html'
 
     # Makes currently logged in user the valid user

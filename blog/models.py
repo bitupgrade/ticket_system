@@ -7,7 +7,7 @@ from django.urls import reverse
 # Fields in ticket forum
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    description = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE) # FIX: Users tickets do not get deleted when 
     
@@ -17,8 +17,8 @@ class Post(models.Model):
         ('Priority 2', 'Priority 2'),
         ('Priority 1', 'Priority 1'),
     ]
-    
-    ticket_priority = models.CharField(max_length=10, choices=TICKET_PRIORITY, default='Priority 4')
+
+    priority = models.CharField(max_length=10, choices=TICKET_PRIORITY, default='Priority 4')
 
     def __str__(self):
         return self.title

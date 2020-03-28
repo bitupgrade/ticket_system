@@ -41,6 +41,10 @@ ul {
   background-color: #5f788a;
 }
 
+.navbar{
+  box-shadow: 0px 0.5px 6px #656363;
+}
+
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
 }

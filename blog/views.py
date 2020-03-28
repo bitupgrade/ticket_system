@@ -21,7 +21,6 @@ class PostListView(ListView):
     template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     #ordering = ['-date_posted'] # orderes posts from newest to oldest
-    paginate_by = 5 # makes it 5 posts per page
 
 class UserPostListView(ListView):
     model = Post

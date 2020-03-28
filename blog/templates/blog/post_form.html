@@ -2,16 +2,28 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <div class="container">
-    <form method="POST">
+  <div class="container mt-4">
+    <nav class="nav">
+      <div>
+          <button class="btn btn-secondary btn-sm mt-1 mb-1" type="submit" form="create_form">Save</button>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Cancel</a> <!-- ADD: Return to ticket queue -->
+      </div>
+    </nav>
+    <form id="create_form" method="POST">
       {% csrf_token %}
       <fieldset class="form-group">
         <legend class="border-bottom mb-4">Create new ticket</legend>
         {{ form|crispy }}
+        <form action="TicketPriority" method="POST">
+          <select >
+            <option selected="selected" disabled>Priority:</option>
+            <option value="Priority 4">Priority 4</option>
+            <option value="Priority 3">Priority 3</option>
+            <option value="Priority 2">Priority 2</option>
+            <option value="Priority 1">Priority 1</option>
+          </select>
+        </form>
       </fieldset>
-      <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">Save</button>
-      </div>
     </form>
   </div>
 {% endblock content %}

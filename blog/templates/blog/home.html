@@ -9,16 +9,18 @@
           <th scope="col">Assignee</th>
         </tr>
       </thead>
+      <tbody>
       {% for post in posts %}
-        <tbody>
+        
           <tr>
             <th scope="row"><a href="{% url 'post-detail' post.id %}">{{ forloop.counter }}</a></th>
             <td>{{ post.title }}</td>
             <td>{{ post.ticket_priority }}</td>
             <td>{{ post.author }}</td>
           </tr>
-        </tbody>
+        
       {% endfor %}
+      </tbody>
     </table>
   <!-- Pagination -->
   <!--{% if is_paginated %}

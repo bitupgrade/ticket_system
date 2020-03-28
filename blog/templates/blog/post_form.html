@@ -6,7 +6,7 @@
     <nav class="nav">
       <div>
           <button class="btn btn-secondary btn-sm mt-1 mb-1" type="submit" form="create_form">Save</button>
-          <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Cancel</a> <!-- ADD: Return to ticket queue -->
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'blog-home' %}">Cancel</a> <!-- ADD: Return to ticket queue -->
       </div>
     </nav>
     <form id="create_form" method="POST">

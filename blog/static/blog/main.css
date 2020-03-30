@@ -123,6 +123,10 @@ a.article-title:hover {
   padding: 30px;
 }
 
+.ticket_number a{
+  color: #007bff;
+}
+
 #sidebar {
   width: 250px;
   top: 0;

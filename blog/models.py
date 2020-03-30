@@ -20,6 +20,15 @@ class Post(models.Model):
 
     priority = models.CharField(max_length=10, choices=TICKET_PRIORITY, default='Priority 4')
 
+    TICKET_STATUS = [
+        ('In Progress', 'In Progress'),
+        ('Waiting internal', 'Waiting internal'),
+        ('Waiting on vendor', 'Waiting on vendor'),
+        ('Closed', 'Closed'),
+    ]
+
+    status = models.CharField(max_length=50, choices=TICKET_STATUS, default='In Progress')
+
     def __str__(self):
         return self.title
 

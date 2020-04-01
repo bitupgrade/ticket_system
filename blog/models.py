@@ -12,18 +12,18 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE) # FIX: Users tickets do not get deleted when 
     
     TICKET_PRIORITY = [
-        ('Priority 4', 'Priority 4'),
-        ('Priority 3', 'Priority 3'),
-        ('Priority 2', 'Priority 2'),
-        ('Priority 1', 'Priority 1'),
+        ('4 - Low', '4 - Low'),
+        ('3 - Averege', '3 - Averege'),
+        ('2 - High', '2 - High'),
+        ('1 - Critical', '1 - Critical'),
     ]
 
-    priority = models.CharField(max_length=10, choices=TICKET_PRIORITY, default='Priority 4')
+    priority = models.CharField(max_length=12, choices=TICKET_PRIORITY, default='4 - Low')
 
     TICKET_STATUS = [
-        ('In Progress', 'In Progress'),
-        ('Waiting internal', 'Waiting internal'),
-        ('Waiting on vendor', 'Waiting on vendor'),
+        ('Work in progress', 'Work in progress'),
+        ('Pending customer', 'Pending customer'),
+        ('Pending vendor', 'Pending vendor'),
         ('Closed', 'Closed'),
     ]
 

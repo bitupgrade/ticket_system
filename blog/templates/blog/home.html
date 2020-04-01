@@ -15,14 +15,14 @@
           <tr>
             <th scope="row" class="ticket_number"><a href="{% url 'post-detail' post.id %}">{{ forloop.counter }}</a></th>
             <td>{{ post.title }}</td>
-            {% if post.priority == 'Priority 4' %}
-              <td class="priority" style="background-color: green; width: 5.5rem;">{{ post.priority }}</td>
-            {% elif post.priority == 'Priority 3' %}
-            <td class="priority" style="background-color: orange; width: 5.5rem">{{ post.priority }}</td>
-            {% elif post.priority == 'Priority 2' %}
-            <td class="priority" style="background-color: yellow; width: 5.5rem">{{ post.priority }}</td>
-            {% elif post.priority == 'Priority 1' %}
-            <td class="priority" style="background-color: red; width: 5.5rem">{{ post.priority }}</td>
+            {% if post.priority == '4 - Low' %}
+              <td class="priority" style="background-color: green; width: 7rem;">{{ post.priority }}</td>
+            {% elif post.priority == '3 - Averege' %}
+            <td class="priority" style="background-color: orange; width: 7rem">{{ post.priority }}</td>
+            {% elif post.priority == '2 - High' %}
+            <td class="priority" style="background-color: yellow; width: 7rem">{{ post.priority }}</td>
+            {% elif post.priority == '1 - Critical' %}
+            <td class="priority" style="background-color: red; width: 7rem">{{ post.priority }}</td>
             {% endif %}
             <td><a href="{% url 'profile' %}"> {{ post.author }}</a></td>
             <td>{{ post.status }}</td>
